@@ -29,7 +29,17 @@ router.get('/:resource/:id', function(req, res, next) {
 
   if(resource == 'zone') {
     ZoneController.findById(id, function(err, result) {
-      
+      if(err) {
+        res.json({
+          confirmation: 'fail',
+          message: 'Not Found'
+        })
+        return 
+      }
+      res.json({
+        confirmation: 'success',
+        message: result
+      })
     })
   }
 })
