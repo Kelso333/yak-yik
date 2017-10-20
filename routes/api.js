@@ -17,15 +17,21 @@ router.get('/:resource', function(req, res, next) {
       }
         res.json({
           confirmation: 'success',
-          results: result
+          results: results
         })
     })
   }
-  
-  res.json({
-    confirmation: 'success',
-    resource: resource
-  })
+})
+
+router.get('/:resource/:id', function(req, res, next) {
+  var resource = req.params.resource;
+  var id = req.params.id;
+
+  if(resource == 'zone') {
+    ZoneController.findById(id, function(err, result) {
+      
+    })
+  }
 })
 
 
