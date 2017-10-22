@@ -63,8 +63,16 @@ router.get('/:resource/:id', function(req, res, next) {
 
 router.post('/:resource', function(req, res, next) {
   var resource = req.params.resource
-  if (resource == 'zone') {
-    ZoneController.create(req.body, function(err, result) {
+  var controller = controllers[resource]
+  if (controller == null) {
+    res.json({
+      confirmation: 'fail',
+      message: 'Invalid Resource Request: '+resource     
+    })
+    return 
+  }
+
+  controller.create(req.body, function(err, result) {
       if(err) {
         res.json({
           confirmation: 'fail',
@@ -76,8 +84,7 @@ router.post('/:resource', function(req, res, next) {
         confirmation: 'success',
         result: result
       })
-    })
-  }
+    })    
 })
 
 module.exports = router
