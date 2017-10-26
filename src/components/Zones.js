@@ -9,7 +9,10 @@ class Zones extends Component {
 
         <ol>
           <li>
-            <Zone />
+            <Zone name="Zone 1"/>
+            <Zone name="Zone 2"/>
+            <Zone name="Zone 3"/>
+            <Zone name="Zone 4"/>
           </li>
         </ol>
 
