@@ -3,28 +3,32 @@ import Zone from './Zone'
 
 class Zones extends Component {
   constructor() {
-    super() =
-      this.state
+    super()
+      this.state = {
+        list: [
+          { name:'Zone 1', zipCode: '10012', numComments: 10 },
+          { name:'Zone 2', zipCode: '10013', numComments: 20 },
+          { name:'Zone 3', zipCode: '10014', numComments: 30 },
+          { name:'Zone 4', zipCode: '10015', numComments: 40 },
+          { name:'Zone 5', zipCode: '10016', numComments: 50 }
+        ]
+      } // end of state
     
   }
   render() {
 
-    const firstZone = { name:'Zone 1', zipCode: '10012', numComments: 10 }
-    const secondZone = { name:'Zone 2', zipCode: '10013', numComments: 20 }
-    const thirdZone = { name:'Zone 3', zipCode: '10014', numComments: 30 }
-    const fourthZone = { name:'Zone 4', zipCode: '10015', numComments: 40 }
+    const listItems = this.state.list.map((zone, i) => {
+      return (
+        <li><Zone currentZone={zone} /></li>
+      )
+    })
 
     return (
 
       <div>
-
         <ol>
-          <li><Zone zone={firstZone} /></li>
-          <li><Zone zone={secondZone} /></li>
-          <li><Zone zone={thirdZone} /></li>
-          <li><Zone zone={fourthZone} /></li>
+          {listItems}
         </ol>
-
       </div>
 
     )

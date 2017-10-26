@@ -7,9 +7,9 @@ class Zone extends Component {
       <div>
         
         <div>
-          <h2><a href="#">{this.props.zone.name}</a></h2>
-          <span>{this.props.zone.zipCode}</span><br />
-          <span>{this.props.zone.numComments} comments</span>
+          <h2><a href="#">{this.props.currentZone.name}</a></h2>
+          <span>{this.props.currentZone.zipCode}</span><br />
+          <span>{this.props.currentZone.numComments} comments</span>
         </div>
         
       </div>
