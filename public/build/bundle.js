@@ -21256,10 +21256,10 @@ var Zones = function (_Component) {
           _react2.default.createElement(
             'li',
             null,
-            _react2.default.createElement(_Zone2.default, { name: 'Zone 1' }),
-            _react2.default.createElement(_Zone2.default, { name: 'Zone 2' }),
-            _react2.default.createElement(_Zone2.default, { name: 'Zone 3' }),
-            _react2.default.createElement(_Zone2.default, { name: 'Zone 4' })
+            _react2.default.createElement(_Zone2.default, { name: 'Zone 1', zipCode: '10012' }),
+            _react2.default.createElement(_Zone2.default, { name: 'Zone 2', zipCode: '10013' }),
+            _react2.default.createElement(_Zone2.default, { name: 'Zone 3', zipCode: '10014' }),
+            _react2.default.createElement(_Zone2.default, { name: 'Zone 4', zipCode: '10015' })
           )
         )
       );
@@ -21320,13 +21320,13 @@ var Zone = function (_Component) {
             _react2.default.createElement(
               "a",
               { href: "#" },
-              "Zone 1"
+              this.props.name
             )
           ),
           _react2.default.createElement(
             "span",
             null,
-            "10012"
+            this.props.zipCode
           ),
           _react2.default.createElement("br", null),
           _react2.default.createElement(
