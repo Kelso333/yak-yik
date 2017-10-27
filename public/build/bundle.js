@@ -21320,13 +21320,13 @@ var Zone = function (_Component) {
         null,
         _react2.default.createElement(
           'div',
-          { style: { padding: 16 } },
+          { style: styles.container },
           _react2.default.createElement(
             'h2',
-            { style: { marginBottom: 5 } },
+            { style: styles.header },
             _react2.default.createElement(
               'a',
-              { style: { textDecoration: 'none', color: 'red' }, href: '#' },
+              { style: styles.zoneTitle, href: '#' },
               this.props.currentZone.name
             )
           ),
@@ -21349,6 +21349,22 @@ var Zone = function (_Component) {
 
   return Zone;
 }(_react.Component);
+
+var styles = {
+  container: {
+    padding: 16,
+    background: '#f9f9f9',
+    marginTop: 12,
+    border: '2px solid #ddd'
+  },
+  header: {
+    marginBottom: 5
+  },
+  zoneTitle: {
+    textDecoration: 'none',
+    color: 'red'
+  }
+};
 
 exports.default = Zone;
 
