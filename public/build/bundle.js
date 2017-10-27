@@ -21295,6 +21295,10 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _styles = __webpack_require__(34);
+
+var _styles2 = _interopRequireDefault(_styles);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21315,30 +21319,31 @@ var Zone = function (_Component) {
   _createClass(Zone, [{
     key: 'render',
     value: function render() {
+      var zoneStyle = _styles2.default.zone;
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'div',
-          { style: styles.container },
+          { style: zoneStyle.container },
           _react2.default.createElement(
             'h2',
-            { style: styles.header },
+            { style: zoneStyle.header },
             _react2.default.createElement(
               'a',
-              { style: styles.zoneTitle, href: '#' },
+              { style: zoneStyle.zoneTitle, href: '#' },
               this.props.currentZone.name
             )
           ),
           _react2.default.createElement(
             'span',
-            null,
+            { className: 'detail' },
             this.props.currentZone.zipCode
           ),
           _react2.default.createElement('br', null),
           _react2.default.createElement(
             'span',
-            null,
+            { className: 'detail' },
             this.props.currentZone.numComments,
             ' comments'
           )
@@ -21350,23 +21355,40 @@ var Zone = function (_Component) {
   return Zone;
 }(_react.Component);
 
-var styles = {
-  container: {
-    padding: 16,
-    background: '#f9f9f9',
-    marginTop: 12,
-    border: '2px solid #ddd'
-  },
-  header: {
-    marginBottom: 5
-  },
-  zoneTitle: {
-    textDecoration: 'none',
-    color: 'red'
-  }
-};
-
 exports.default = Zone;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  universal: {},
+
+  zone: {
+
+    container: {
+      padding: 16,
+      background: ' #f9f9f9',
+      marginTop: 12,
+      border: '2px solid #ddd'
+    },
+
+    header: {
+      marginTop: 0,
+      marginBottom: 5
+    },
+
+    zoneTitle: {
+      textDecoration: 'none',
+      color: 'red'
+    } // end of zone object
+  } };
 
 /***/ })
 /******/ ]);
