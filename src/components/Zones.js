@@ -13,7 +13,6 @@ class Zones extends Component {
           { name:'Zone 5', zipCode: '10016', numComments: 50 }
         ]
       } // end of state
-    
   }
   render() {
 
