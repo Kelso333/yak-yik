@@ -13,7 +13,7 @@ class Home extends Component {
             </div>
 
             <div class="col-md-8">
-              Right side
+              <Comments />
             </div>
 
         </div> {/* end of row */}

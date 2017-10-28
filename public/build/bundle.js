@@ -21444,7 +21444,7 @@ var Home = function (_Component) {
           _react2.default.createElement(
             'div',
             { 'class': 'col-md-8' },
-            'Right side'
+            _react2.default.createElement(Comments, null)
           )
         ),
         ' '
