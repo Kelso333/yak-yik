@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Comment from './Comment'
+import Comment from '../presentation/Comment'
 import styles from './styles'
 
 class Comments extends Component {
@@ -27,6 +27,10 @@ class Comments extends Component {
           <ul style={styles.comment.commentsList}>
             { commentList }
           </ul>
+
+          <input className="form-control" type="text" placeholder="Username" /><br />
+          <input className="form-control" type="text" placeholder="Comment" /><br />
+          <button className="btn btn-info">Submit Comment</button>
         </div>
       </div>
     )
