@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Comment from './Comment'
+import styles from './styles'
 
 class Comments extends Component {
   constructor() {
@@ -22,8 +23,8 @@ class Comments extends Component {
 
       <div>
         <h2>Comments: Zone 1</h2>
-        <div style={{padding:12, background:'#f9f9f9', border:'1px solid #ddd'}}>
-          <ul>
+        <div style={styles.comment.commentsBox}>
+          <ul style={styles.comment.commentsList}>
             { commentList }
           </ul>
         </div>

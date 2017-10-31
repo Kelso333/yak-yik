@@ -21443,6 +21443,17 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   universal: {},
 
+  comment: {
+    commentsBox: {
+      padding: 12,
+      background: '#f9f9f9',
+      border: '1px solid #ddd'
+    },
+    commentsList: {
+      listStyleType: 'none'
+    }
+  },
+
   zone: {
 
     container: {
@@ -21483,6 +21494,10 @@ var _react2 = _interopRequireDefault(_react);
 var _Comment = __webpack_require__(37);
 
 var _Comment2 = _interopRequireDefault(_Comment);
+
+var _styles = __webpack_require__(35);
+
+var _styles2 = _interopRequireDefault(_styles);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21527,10 +21542,10 @@ var Comments = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { style: { padding: 12, background: '#f9f9f9', border: '1px solid #ddd' } },
+          { style: _styles2.default.comment.commentsBox },
           _react2.default.createElement(
             'ul',
-            null,
+            { style: _styles2.default.comment.commentsList },
             commentList
           )
         )
@@ -21582,11 +21597,15 @@ var Comment = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
-        this.props.currentComment.username,
-        _react2.default.createElement('br', null),
+        { style: { marginBottom: 16 } },
         this.props.currentComment.body,
         _react2.default.createElement('br', null),
+        this.props.currentComment.username,
+        _react2.default.createElement(
+          'span',
+          null,
+          '|'
+        ),
         this.props.currentComment.timestamp
       );
     }
