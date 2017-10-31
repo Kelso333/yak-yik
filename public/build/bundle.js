@@ -21501,7 +21501,7 @@ var Comments = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Comments.__proto__ || Object.getPrototypeOf(Comments)).call(this));
 
     _this.state = {
-      list: [{ body: 'comment 1', username: 'kelso' }, { body: 'comment 2', username: 'yossi' }, { body: 'comment 3', username: 'sarah' }]
+      list: [{ body: 'comment 1', username: 'kelso', timestamp: '10:30' }, { body: 'comment 2', username: 'yossi', timestamp: '10:45' }, { body: 'comment 3', username: 'sarah', timestamp: '11:00' }]
     };
     return _this;
   }
@@ -21526,9 +21526,13 @@ var Comments = function (_Component) {
           'Comments: Zone 1'
         ),
         _react2.default.createElement(
-          'ul',
-          null,
-          commentList
+          'div',
+          { style: { padding: 12, background: '#f9f9f9', border: '1px solid #ddd' } },
+          _react2.default.createElement(
+            'ul',
+            null,
+            commentList
+          )
         )
       );
     }
@@ -21581,7 +21585,9 @@ var Comment = function (_Component) {
         null,
         this.props.currentComment.username,
         _react2.default.createElement('br', null),
-        this.props.currentComment.body
+        this.props.currentComment.body,
+        _react2.default.createElement('br', null),
+        this.props.currentComment.timestamp
       );
     }
   }]);

@@ -5,7 +5,8 @@ class Comment extends Component {
     return(
       <div>
         {this.props.currentComment.username}<br />
-        {this.props.currentComment.body}
+        {this.props.currentComment.body}<br />
+        {this.props.currentComment.timestamp}
       </div>
     )
   }
