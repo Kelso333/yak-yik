@@ -5,10 +5,19 @@ class Comments extends Component {
   constructor() {
     super()
     this.state = {
-      
+      list: [
+        {body: 'comment 1', username: 'kelso'},
+        {body: 'comment 2', username: 'yossi'},
+        {body: 'comment 3', username: 'sarah'}
+      ]
     }
   }
   render() {
+    const commentList = this.state.map(() => {
+      return (
+       <li><Comment /> </li>
+      )
+    })
     return(
 
       <div>
