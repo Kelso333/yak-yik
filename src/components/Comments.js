@@ -13,20 +13,17 @@ class Comments extends Component {
     }
   }
   render() {
-    const commentList = this.state.map(() => {
+    const commentList = this.state.list.map((comment, i) => {
       return (
-       <li><Comment /> </li>
+       <li><Comment currentComment={comment}/> </li>
       )
-    })
+    });
     return(
 
       <div>
         <h2>Comments: Zone 1</h2>
           <ul>
-            <li><Comment /> </li>
-            <li><Comment /> </li>
-            <li><Comment /> </li>
-            <li><Comment /> </li>
+            { commentList }
           </ul>
       </div>
     )

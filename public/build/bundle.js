@@ -21509,11 +21509,11 @@ var Comments = function (_Component) {
   _createClass(Comments, [{
     key: 'render',
     value: function render() {
-      var commentList = this.state.map(function () {
+      var commentList = this.state.list.map(function (comment, i) {
         return _react2.default.createElement(
           'li',
           null,
-          _react2.default.createElement(_Comment2.default, null),
+          _react2.default.createElement(_Comment2.default, { currentComment: comment }),
           ' '
         );
       });
@@ -21528,30 +21528,7 @@ var Comments = function (_Component) {
         _react2.default.createElement(
           'ul',
           null,
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement(_Comment2.default, null),
-            ' '
-          ),
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement(_Comment2.default, null),
-            ' '
-          ),
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement(_Comment2.default, null),
-            ' '
-          ),
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement(_Comment2.default, null),
-            ' '
-          )
+          commentList
         )
       );
     }
@@ -21602,7 +21579,9 @@ var Comment = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'This is a comment'
+        this.props.currentComment.username,
+        _react2.default.createElement('br', null),
+        this.props.currentComment.body
       );
     }
   }]);

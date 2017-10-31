@@ -4,7 +4,8 @@ class Comment extends Component {
   render() {
     return(
       <div>
-        This is a comment 
+        {this.props.currentComment.username}<br />
+        {this.props.currentComment.body}
       </div>
     )
   }
