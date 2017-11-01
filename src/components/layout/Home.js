@@ -13,7 +13,7 @@ class Home extends Component {
               <Zones />
             </div>
 
-            <div class="col-md-8">
+            <div className="col-md-8">
               <Comments />
             </div>
 
