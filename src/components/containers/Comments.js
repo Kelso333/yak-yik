@@ -23,8 +23,11 @@ class Comments extends Component {
   }
 
   updateUsername(event) {
-    console.log(event.target.value);
-    
+    let updatedComment = Object.assign({}, this.state.comment)
+    updatedComment['username'] = event.target.value
+    this.setState({
+      comment: updatedComment
+    })
   } 
 
   updateComment(event) {

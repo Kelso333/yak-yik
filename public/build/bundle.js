@@ -21533,7 +21533,11 @@ var Comments = function (_Component) {
   }, {
     key: 'updateUsername',
     value: function updateUsername(event) {
-      console.log(event.target.value);
+      var updatedComment = Object.assign({}, this.state.comment);
+      updatedComment['username'] = event.target.value;
+      this.setState({
+        comment: updatedComment
+      });
     }
   }, {
     key: 'updateComment',
