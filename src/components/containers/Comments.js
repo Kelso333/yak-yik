@@ -18,7 +18,11 @@ class Comments extends Component {
     console.log('submitComment');
   }
 
-  render() {
+  updateUsername() {
+    console.log('it works')
+  } 
+  
+   render() {
     const commentList = this.state.list.map((comment, i) => {
       return (
        <li key={i}><Comment currentComment={comment}/> </li>
@@ -33,7 +37,7 @@ class Comments extends Component {
             { commentList }
           </ul>
 
-          <input className="form-control" type="text" placeholder="Username" /><br />
+          <input onChange={this.updateUsername.bind(this)} className="form-control" type="text" placeholder="Username" /><br />
           <input className="form-control" type="text" placeholder="Comment" /><br />
           <button onClick={this.submitComment.bind(this)} className="btn btn-info">Submit Comment</button>
         </div>

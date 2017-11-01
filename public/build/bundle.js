@@ -21527,6 +21527,11 @@ var Comments = function (_Component) {
       console.log('submitComment');
     }
   }, {
+    key: 'updateUsername',
+    value: function updateUsername() {
+      console.log('it works');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var commentList = this.state.list.map(function (comment, i) {
@@ -21553,7 +21558,7 @@ var Comments = function (_Component) {
             { style: _styles2.default.comment.commentsList },
             commentList
           ),
-          _react2.default.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Username' }),
+          _react2.default.createElement('input', { onChange: this.updateUsername.bind(this), className: 'form-control', type: 'text', placeholder: 'Username' }),
           _react2.default.createElement('br', null),
           _react2.default.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Comment' }),
           _react2.default.createElement('br', null),
