@@ -21528,8 +21528,8 @@ var Comments = function (_Component) {
     }
   }, {
     key: 'updateUsername',
-    value: function updateUsername() {
-      console.log('it works');
+    value: function updateUsername(event) {
+      console.log(event.target.value);
     }
   }, {
     key: 'render',

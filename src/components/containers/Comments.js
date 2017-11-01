@@ -18,8 +18,8 @@ class Comments extends Component {
     console.log('submitComment');
   }
 
-  updateUsername() {
-    console.log('it works')
+  updateUsername(event) {
+    console.log(event.target.value);
   } 
   
    render() {
