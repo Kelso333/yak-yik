@@ -6,6 +6,10 @@ class Comments extends Component {
   constructor() {
     super()
     this.state = {
+      comment: {
+        username: '',
+        body: ''
+    },
       list: [
         {body: 'comment 1', username: 'kelso', timestamp:'10:30'},
         {body: 'comment 2', username: 'yossi', timestamp:'10:45'},
@@ -20,7 +24,12 @@ class Comments extends Component {
 
   updateUsername(event) {
     console.log(event.target.value);
+    
   } 
+
+  updateComment(event) {
+    console.log(event.target.value);
+  }
   
    render() {
     const commentList = this.state.list.map((comment, i) => {
@@ -38,7 +47,7 @@ class Comments extends Component {
           </ul>
 
           <input onChange={this.updateUsername.bind(this)} className="form-control" type="text" placeholder="Username" /><br />
-          <input className="form-control" type="text" placeholder="Comment" /><br />
+          <input onChange={this.updateComment.bind(this)} className="form-control" type="text" placeholder="Comment" /><br />
           <button onClick={this.submitComment.bind(this)} className="btn btn-info">Submit Comment</button>
         </div>
       </div>

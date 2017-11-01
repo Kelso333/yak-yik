@@ -21516,6 +21516,10 @@ var Comments = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Comments.__proto__ || Object.getPrototypeOf(Comments)).call(this));
 
     _this.state = {
+      comment: {
+        username: '',
+        body: ''
+      },
       list: [{ body: 'comment 1', username: 'kelso', timestamp: '10:30' }, { body: 'comment 2', username: 'yossi', timestamp: '10:45' }, { body: 'comment 3', username: 'sarah', timestamp: '11:00' }]
     };
     return _this;
@@ -21529,6 +21533,11 @@ var Comments = function (_Component) {
   }, {
     key: 'updateUsername',
     value: function updateUsername(event) {
+      console.log(event.target.value);
+    }
+  }, {
+    key: 'updateComment',
+    value: function updateComment(event) {
       console.log(event.target.value);
     }
   }, {
@@ -21560,7 +21569,7 @@ var Comments = function (_Component) {
           ),
           _react2.default.createElement('input', { onChange: this.updateUsername.bind(this), className: 'form-control', type: 'text', placeholder: 'Username' }),
           _react2.default.createElement('br', null),
-          _react2.default.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Comment' }),
+          _react2.default.createElement('input', { onChange: this.updateComment.bind(this), className: 'form-control', type: 'text', placeholder: 'Comment' }),
           _react2.default.createElement('br', null),
           _react2.default.createElement(
             'button',
