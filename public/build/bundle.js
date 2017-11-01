@@ -21528,8 +21528,9 @@ var Comments = function (_Component) {
   _createClass(Comments, [{
     key: 'submitComment',
     value: function submitComment() {
-      console.log('submitComment');
-    }
+      console.log('submitComment: ' + JSON.stringify(this.state.comment));
+    } // end of submitComment
+
   }, {
     key: 'updateUsername',
     value: function updateUsername(event) {
@@ -21538,12 +21539,18 @@ var Comments = function (_Component) {
       this.setState({
         comment: updatedComment
       });
-    }
+    } // end of updatedUsername
+
   }, {
-    key: 'updateComment',
-    value: function updateComment(event) {
-      console.log(event.target.value);
-    }
+    key: 'updateBody',
+    value: function updateBody(event) {
+      var updatedComment = Object.assign({}, this.state.comment);
+      updatedComment['body'] = event.target.value;
+      this.setState({
+        comment: updatedComment
+      });
+    } // end of updateComment
+
   }, {
     key: 'render',
     value: function render() {
@@ -21573,7 +21580,7 @@ var Comments = function (_Component) {
           ),
           _react2.default.createElement('input', { onChange: this.updateUsername.bind(this), className: 'form-control', type: 'text', placeholder: 'Username' }),
           _react2.default.createElement('br', null),
-          _react2.default.createElement('input', { onChange: this.updateComment.bind(this), className: 'form-control', type: 'text', placeholder: 'Comment' }),
+          _react2.default.createElement('input', { onChange: this.updateBody.bind(this), className: 'form-control', type: 'text', placeholder: 'Comment' }),
           _react2.default.createElement('br', null),
           _react2.default.createElement(
             'button',

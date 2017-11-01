@@ -19,8 +19,8 @@ class Comments extends Component {
   }
 
   submitComment() {
-    console.log('submitComment');
-  }
+    console.log('submitComment: ' + JSON.stringify(this.state.comment));
+  } // end of submitComment
 
   updateUsername(event) {
     let updatedComment = Object.assign({}, this.state.comment)
@@ -28,11 +28,16 @@ class Comments extends Component {
     this.setState({
       comment: updatedComment
     })
-  } 
+  } // end of updatedUsername
 
-  updateComment(event) {
-    console.log(event.target.value);
-  }
+  updateBody(event) {
+    let updatedComment = Object.assign({}, this.state.comment)
+    updatedComment['body'] = event.target.value
+    this.setState({
+      comment: updatedComment
+    })
+
+  } // end of updateComment
   
    render() {
     const commentList = this.state.list.map((comment, i) => {
@@ -50,7 +55,7 @@ class Comments extends Component {
           </ul>
 
           <input onChange={this.updateUsername.bind(this)} className="form-control" type="text" placeholder="Username" /><br />
-          <input onChange={this.updateComment.bind(this)} className="form-control" type="text" placeholder="Comment" /><br />
+          <input onChange={this.updateBody.bind(this)} className="form-control" type="text" placeholder="Comment" /><br />
           <button onClick={this.submitComment.bind(this)} className="btn btn-info">Submit Comment</button>
         </div>
       </div>
