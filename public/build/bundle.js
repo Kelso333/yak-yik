@@ -21518,7 +21518,8 @@ var Comments = function (_Component) {
     _this.state = {
       comment: {
         username: '',
-        body: ''
+        body: '',
+        timestamp: ''
       },
       list: [{ body: 'comment 1', username: 'kelso', timestamp: '10:30' }, { body: 'comment 2', username: 'yossi', timestamp: '10:45' }, { body: 'comment 3', username: 'sarah', timestamp: '11:00' }]
     };
@@ -21527,8 +21528,12 @@ var Comments = function (_Component) {
 
   _createClass(Comments, [{
     key: 'submitComment',
-    value: function submitComment() {
-      console.log('submitComment: ' + JSON.stringify(this.state.comment));
+    value: function submitComment(event) {
+      var updatedList = Object.assign([], this.state.list);
+      updatedList.push(this.state.comment);
+      this.setState({
+        list: updatedList
+      });
     } // end of submitComment
 
   }, {
@@ -21550,6 +21555,16 @@ var Comments = function (_Component) {
         comment: updatedComment
       });
     } // end of updateComment
+
+  }, {
+    key: 'updateTimestamp',
+    value: function updateTimestamp(event) {
+      var updatedComment = Object.assign({}, this.state.comment);
+      updatedComment['timestamp'] = event.target.value;
+      this.setState({
+        comment: updatedComment
+      });
+    } // end updatedTimestamp
 
   }, {
     key: 'render',
@@ -21581,6 +21596,8 @@ var Comments = function (_Component) {
           _react2.default.createElement('input', { onChange: this.updateUsername.bind(this), className: 'form-control', type: 'text', placeholder: 'Username' }),
           _react2.default.createElement('br', null),
           _react2.default.createElement('input', { onChange: this.updateBody.bind(this), className: 'form-control', type: 'text', placeholder: 'Comment' }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', { onChange: this.updateTimestamp.bind(this), className: 'form-control', type: 'text', placeholder: 'Time' }),
           _react2.default.createElement('br', null),
           _react2.default.createElement(
             'button',
