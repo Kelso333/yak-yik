@@ -21333,7 +21333,6 @@ var Zones = function (_Component) {
           _react2.default.createElement(_Zone2.default, { currentZone: zone })
         );
       });
-
       return _react2.default.createElement(
         'div',
         null,
@@ -21341,6 +21340,15 @@ var Zones = function (_Component) {
           'ol',
           null,
           listItems
+        ),
+        _react2.default.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Name' }),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Zip Code' }),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'button',
+          { className: 'btn btn-danger' },
+          'Add Zone'
         )
       );
     }
