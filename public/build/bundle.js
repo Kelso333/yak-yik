@@ -21323,9 +21323,11 @@ var Zones = function (_Component) {
   }
 
   _createClass(Zones, [{
+    key: 'updateZone',
+    value: function updateZone() {}
+  }, {
     key: 'render',
     value: function render() {
-
       var listItems = this.state.list.map(function (zone, i) {
         return _react2.default.createElement(
           'li',

@@ -14,15 +14,18 @@ class Zones extends Component {
         ]
       } // end of state
   }
-  render() {
 
+  updateZone() {
+
+  }
+  
+  render() {
     const listItems = this.state.list.map((zone, i) => {
       return (
         <li key={i}><Zone currentZone={zone} /></li>
       )
     })
     return (
-
       <div>
         <ol>
           {listItems}
