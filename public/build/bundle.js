@@ -21328,18 +21328,22 @@ var Zones = function (_Component) {
   }
 
   _createClass(Zones, [{
-    key: 'addZone',
-    value: function addZone() {
-      console.log('ADD ZONE: ' + JSON.stringify(this.state.zone));
-    }
-  }, {
     key: 'updateZone',
-    value: function updateZone() {
-      console.log('updateZone: ' + event.target.id + ' == ' + event.target.value);
+    value: function updateZone(event) {
       var updatedZone = Object.assign({}, this.state.zone);
       updatedZone[event.target.id] = event.target.value;
       this.setState({
         zone: updatedZone
+      });
+    }
+  }, {
+    key: 'addZone',
+    value: function addZone() {
+      console.log('ADD ZONE: ' + JSON.stringify(this.state.zone));
+      var updatedList = Object.assign([], this.state.list);
+      updatedList.push(this.state.zone);
+      this.setState({
+        list: updatedList
       });
     }
   }, {

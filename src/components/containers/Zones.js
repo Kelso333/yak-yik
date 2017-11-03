@@ -20,17 +20,20 @@ class Zones extends Component {
       } // end of state
   }
 
-  addZone() {
-    console.log('ADD ZONE: '+JSON.stringify(this.state.zone));
 
-  }
-
-  updateZone() {
-    console.log('updateZone: '+ event.target.id +' == '+ event.target.value)
+  updateZone(event) {
     let updatedZone = Object.assign({}, this.state.zone)
     updatedZone[event.target.id] = event.target.value
     this.setState({
       zone: updatedZone
+    })
+  }
+  addZone() {
+    console.log('ADD ZONE: '+JSON.stringify(this.state.zone));
+    let updatedList = Object.assign([], this.state.list)
+    updatedList.push(this.state.zone)
+    this.setState({
+      list: updatedList
     })
   }
   
