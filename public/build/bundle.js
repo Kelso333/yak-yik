@@ -21323,7 +21323,7 @@ var Zones = function (_Component) {
         zipCode: ''
       },
 
-      list: [{ name: 'Zone 1', zipCode: '10012', numComments: 10 }, { name: 'Zone 2', zipCode: '10013', numComments: 20 }, { name: 'Zone 3', zipCode: '10014', numComments: 30 }, { name: 'Zone 4', zipCode: '10015', numComments: 40 }, { name: 'Zone 5', zipCode: '10016', numComments: 50 }] // end of state
+      list: [] // end of state
     };return _this;
   }
 
@@ -21552,7 +21552,7 @@ var Comments = function (_Component) {
         body: '',
         timestamp: ''
       },
-      list: [{ body: 'comment 1', username: 'kelso', timestamp: '10:30' }, { body: 'comment 2', username: 'yossi', timestamp: '10:45' }, { body: 'comment 3', username: 'sarah', timestamp: '11:00' }]
+      list: []
     };
     return _this;
   }

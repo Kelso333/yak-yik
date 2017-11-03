@@ -11,11 +11,7 @@ class Comments extends Component {
         body: '',
         timestamp: ''
     },
-      list: [
-        {body: 'comment 1', username: 'kelso', timestamp:'10:30'},
-        {body: 'comment 2', username: 'yossi', timestamp:'10:45'},
-        {body: 'comment 3', username: 'sarah', timestamp:'11:00'}
-      ]
+      list: []
     }
   }
 
