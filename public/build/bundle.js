@@ -21468,6 +21468,7 @@ var Zone = function (_Component) {
     key: 'render',
     value: function render() {
       var zoneStyle = _styles2.default.zone;
+      var zipCode = this.props.currentZone.zipCodes[0];
       return _react2.default.createElement(
         'div',
         null,
@@ -21486,7 +21487,7 @@ var Zone = function (_Component) {
           _react2.default.createElement(
             'span',
             { className: 'detail' },
-            this.props.currentZone.zipCode
+            zipCode
           ),
           _react2.default.createElement('br', null),
           _react2.default.createElement(
