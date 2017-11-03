@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Zone from '../presentation/Zone'
+import superagent from 'superagent'
 
 class Zones extends Component {
   constructor() {
@@ -22,7 +23,7 @@ class Zones extends Component {
       zone: updatedZone
     })
   }
-  
+
   addZone() {
     console.log('ADD ZONE: '+JSON.stringify(this.state.zone));
     let updatedList = Object.assign([], this.state.list)
