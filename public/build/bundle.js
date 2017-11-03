@@ -21332,6 +21332,13 @@ var Zones = function (_Component) {
   }
 
   _createClass(Zones, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('componentDidMount: ');
+
+      _superagent2.default.get('/api/zone').query().set().end();
+    }
+  }, {
     key: 'updateZone',
     value: function updateZone(event) {
       var updatedZone = Object.assign({}, this.state.zone);

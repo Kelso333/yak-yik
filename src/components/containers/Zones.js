@@ -15,6 +15,15 @@ class Zones extends Component {
       } // end of state
   }
 
+  componentDidMount() {
+    console.log('componentDidMount: ')
+    
+    superagent
+    .get('/api/zone')
+    .query()
+    .set()
+    .end()
+  }
 
   updateZone(event) {
     let updatedZone = Object.assign({}, this.state.zone)
