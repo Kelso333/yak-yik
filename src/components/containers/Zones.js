@@ -5,6 +5,11 @@ class Zones extends Component {
   constructor() {
     super()
       this.state = {
+        zone: {
+          name: '',
+          zipCode: ''
+        },
+
         list: [
           { name:'Zone 1', zipCode: '10012', numComments: 10 },
           { name:'Zone 2', zipCode: '10013', numComments: 20 },
@@ -15,8 +20,18 @@ class Zones extends Component {
       } // end of state
   }
 
-  updateZone() {
+  addZone() {
+    console.log('ADD ZONE: '+JSON.stringify(this.state.zone));
 
+  }
+
+  updateZone() {
+    console.log('updateZone: '+ event.target.id +' == '+ event.target.value)
+    let updatedZone = Object.assign({}, this.state.zone)
+    updatedZone[event.target.id] = event.target.value
+    this.setState({
+      zone: updatedZone
+    })
   }
   
   render() {
@@ -31,9 +46,9 @@ class Zones extends Component {
           {listItems}
         </ol>
 
-        <input className='form-control' type='text' placeholder='Name' /><br />
-        <input className='form-control' type='text' placeholder='Zip Code' /><br />
-        <button className="btn btn-danger">Add Zone</button>
+        <input id="name" onChange={this.updateZone.bind(this)} className='form-control' type='text' placeholder='Name' /><br />
+        <input id="zipCode" onChange={this.updateZone.bind(this)} className='form-control' type='text' placeholder='Zip Code' /><br />
+        <button onClick={this.addZone.bind(this)} className="btn btn-danger">Add Zone</button>
       </div>
 
     )

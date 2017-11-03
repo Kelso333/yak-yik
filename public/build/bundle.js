@@ -21318,13 +21318,30 @@ var Zones = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Zones.__proto__ || Object.getPrototypeOf(Zones)).call(this));
 
     _this.state = {
+      zone: {
+        name: '',
+        zipCode: ''
+      },
+
       list: [{ name: 'Zone 1', zipCode: '10012', numComments: 10 }, { name: 'Zone 2', zipCode: '10013', numComments: 20 }, { name: 'Zone 3', zipCode: '10014', numComments: 30 }, { name: 'Zone 4', zipCode: '10015', numComments: 40 }, { name: 'Zone 5', zipCode: '10016', numComments: 50 }] // end of state
     };return _this;
   }
 
   _createClass(Zones, [{
+    key: 'addZone',
+    value: function addZone() {
+      console.log('ADD ZONE: ' + JSON.stringify(this.state.zone));
+    }
+  }, {
     key: 'updateZone',
-    value: function updateZone() {}
+    value: function updateZone() {
+      console.log('updateZone: ' + event.target.id + ' == ' + event.target.value);
+      var updatedZone = Object.assign({}, this.state.zone);
+      updatedZone[event.target.id] = event.target.value;
+      this.setState({
+        zone: updatedZone
+      });
+    }
   }, {
     key: 'render',
     value: function render() {
@@ -21343,13 +21360,13 @@ var Zones = function (_Component) {
           null,
           listItems
         ),
-        _react2.default.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Name' }),
+        _react2.default.createElement('input', { id: 'name', onChange: this.updateZone.bind(this), className: 'form-control', type: 'text', placeholder: 'Name' }),
         _react2.default.createElement('br', null),
-        _react2.default.createElement('input', { className: 'form-control', type: 'text', placeholder: 'Zip Code' }),
+        _react2.default.createElement('input', { id: 'zipCode', onChange: this.updateZone.bind(this), className: 'form-control', type: 'text', placeholder: 'Zip Code' }),
         _react2.default.createElement('br', null),
         _react2.default.createElement(
           'button',
-          { className: 'btn btn-danger' },
+          { onClick: this.addZone.bind(this), className: 'btn btn-danger' },
           'Add Zone'
         )
       );
