@@ -15,8 +15,6 @@ class Zones extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount: ')
-    
     superagent
     .get('/api/zone')
     .query(null)
@@ -26,7 +24,6 @@ class Zones extends Component {
         alert('ERROR: ' +err)
         return
       }
-      console.log(JSON.stringify(response.body))
       let results = response.body.results
       this.setState({
         list: results

@@ -21357,14 +21357,11 @@ var Zones = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      console.log('componentDidMount: ');
-
       _superagent2.default.get('/api/zone').query(null).set('Accept', 'application/json').end(function (err, response) {
         if (err) {
           alert('ERROR: ' + err);
           return;
         }
-        console.log(JSON.stringify(response.body));
         var results = response.body.results;
         _this2.setState({
           list: results
@@ -23612,6 +23609,10 @@ var _styles = __webpack_require__(45);
 
 var _styles2 = _interopRequireDefault(_styles);
 
+var _superagent = __webpack_require__(37);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23640,6 +23641,22 @@ var Comments = function (_Component) {
   }
 
   _createClass(Comments, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _superagent2.default.get('/api/comment').query(null).set('Accept', 'application/json').end(function (err, response) {
+        if (err) {
+          alert('ERROR: ' + err);
+          return;
+        }
+        var results = response.body.results;
+        _this2.setState({
+          list: results
+        });
+      });
+    }
+  }, {
     key: 'submitComment',
     value: function submitComment(event) {
       var updatedList = Object.assign([], this.state.list);
