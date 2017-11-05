@@ -14,6 +14,7 @@ class Comments extends Component {
     },
       list: []
     }
+  
   }
 
   componentDidMount() {
@@ -31,7 +32,7 @@ class Comments extends Component {
         list: results
       })
     })
-  }
+  } // end of componentDidMount
 
   submitComment(event) {
     let updatedList = Object.assign([], this.state.list)
