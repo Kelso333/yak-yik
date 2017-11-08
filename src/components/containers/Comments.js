@@ -14,7 +14,6 @@ class Comments extends Component {
     },
       list: []
     }
-  
   }
 
   componentDidMount() {

@@ -23637,7 +23637,6 @@ var Comments = function (_Component) {
       },
       list: []
     };
-
     return _this;
   }
 
