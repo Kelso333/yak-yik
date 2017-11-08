@@ -22251,6 +22251,8 @@ var _superagent = __webpack_require__(15);
 
 var _superagent2 = _interopRequireDefault(_superagent);
 
+var _APIManager = __webpack_require__(46);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23858,6 +23860,49 @@ exports.default = {
       color: 'red'
     } // end of zone object
   } };
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _superagent = __webpack_require__(15);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+
+  get: function get(url, params, callback) {
+    _superagent2.default.get(url).query(params).set('Accept', 'application/json').end(function (err, response) {
+      if (err) {
+        callback(err, null);
+        return;
+      }
+      var confirmation = response.body.confirmation;
+      if (confirmation != 'success') {
+        callback({ message: response.body.message }, null);
+        return;
+      }
+
+      callback(null, response.body);
+    });
+  },
+
+  post: function post() {},
+
+  put: function put() {},
+
+  delete: function _delete() {}
+
+};
 
 /***/ })
 /******/ ]);

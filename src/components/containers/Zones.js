@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Zone from '../presentation/Zone'
 import superagent from 'superagent'
+import { APIManager } from '../../utils/APIManager'
 
 class Zones extends Component {
   constructor() {
