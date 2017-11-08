@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Zone from '../presentation/Zone'
 import superagent from 'superagent'
-import { APIManager } from '../../utils/APIManager'
+import { APIManager } from '../../utils'
 
 class Zones extends Component {
   constructor() {
@@ -16,17 +16,13 @@ class Zones extends Component {
   }
 
   componentDidMount() {
-    superagent
-    .get('/api/zone')
-    .query(null)
-    .set('Accept', 'application/json')
-    .end((err, response) => {
+    console.log('ComponentDidMount: ');
+    APIManager.get('/api/zone', null, (err, results) => {
       if (err) {
-        alert('ERROR: ' +err)
+        alert('ERROR: ' + err.message)
         return
       }
-      let results = response.body.results
-      this.setState({
+       this.setState({
         list: results
       })
     })
@@ -41,7 +37,7 @@ class Zones extends Component {
   }
 
   addZone() {
-    console.log('ADD ZONE: '+JSON.stringify(this.state.zone));
+    console.log('ADD ZONE: ' + JSON.stringify(this.state.zone));
     let updatedList = Object.assign([], this.state.list)
     updatedList.push(this.state.zone)
     this.setState({
